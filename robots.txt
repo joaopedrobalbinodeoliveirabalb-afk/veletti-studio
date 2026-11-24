@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://veletti-studio.onrender.com/sitemap.xml
