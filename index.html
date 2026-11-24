@@ -998,3 +998,852 @@ img {
 
 .sport .category-card h3 {
     position: absolute;
+    z-index: 2;
+    bottom: 22px;
+    left: 22px;
+    font-size: 23px;
+}
+
+.sport .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.sport .product-card {
+    background: white;
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: 0 5px 22px rgba(20,40,60,.07);
+}
+
+.sport .product-card img {
+    height: 230px;
+    background: #e8edf2;
+}
+
+.sport .product-info {
+    padding: 22px;
+}
+
+.sport .product-info small {
+    color: var(--s-blue);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.sport .product-info h3 {
+    margin: 9px 0;
+}
+
+.sport .product-info p {
+    color: #718091;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.sport .product-price {
+    display: block;
+    margin: 15px 0;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.sport .product-info a {
+    display: inline-block;
+    background: var(--s-blue);
+    color: white;
+    padding: 11px 17px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.sport .sport-banner {
+    margin: 0 7% 80px;
+    padding: 45px;
+    background: var(--s-dark);
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.sport .sport-banner h2 {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 13px;
+}
+
+.sport .sport-banner p {
+    color: #b9c8d7;
+    line-height: 1.7;
+}
+
+.sport .sport-footer {
+    background: var(--s-dark);
+    color: #d5dfe9;
+    text-align: center;
+    padding: 38px 15px;
+}
+
+/* ANIMAÇÕES E RESPONSIVIDADE */
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+    .hero-orbit {
+        right: -100px;
+        opacity: .35;
+    }
+
+    .about-grid,
+    .garrison-about,
+    .urban-about {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid,
+    .projects-grid,
+    .garrison-services,
+    .menu-grid,
+    .category-grid,
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .section {
+        padding: 70px 0;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+        background: #071225;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 590px;
+    }
+
+    .hero-orbit {
+        width: 220px;
+        height: 220px;
+        top: 45%;
+    }
+
+    .about-visual {
+        min-height: 270px;
+    }
+
+    .services-grid,
+    .projects-grid,
+    .garrison-services,
+    .menu-grid,
+    .category-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-box {
+        padding: 35px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .garrison .demo-nav,
+    .urban .demo-nav,
+    .sport .demo-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .garrison .demo-nav-links,
+    .urban .demo-nav-links,
+    .sport .demo-nav-links {
+        gap: 15px;
+    }
+
+    .garrison .demo-hero,
+    .urban .demo-hero,
+    .sport .demo-hero {
+        min-height: 500px;
+        padding: 55px 7%;
+    }
+
+    .garrison .demo-section,
+    .urban .demo-section,
+    .sport .demo-section {
+        padding: 65px 6%;
+    }
+
+    .garrison .garrison-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .garrison .garrison-gallery img {
+        height: 240px;
+    }
+
+    .garrison .garrison-about img,
+    .urban .urban-about img {
+        height: 260px;
+    }
+
+    .sport .sport-banner {
+        margin: 0 6% 60px;
+        padding: 30px 20px;
+    }
+
+    .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        right: 16px;
+        bottom: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="container navbar">
+        <a href="#inicio" class="logo">VELETTI<span>.</span></a>
+
+        <button class="menu-button" id="menuButton" aria-label="Abrir menu" aria-expanded="false">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+    <div class="hero-orbit"></div>
+
+    <div class="container hero-content reveal">
+        <span class="hero-tag">ESTÚDIO DIGITAL • DESIGN • TECNOLOGIA</span>
+
+        <h1>
+            Criamos experiências
+            <span class="gradient-text">digitais extraordinárias.</span>
+        </h1>
+
+        <p>
+            Transformamos ideias em sites modernos, elegantes e funcionais.
+            Desenvolvemos experiências digitais que ajudam marcas a se
+            destacarem no mundo online.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#projetos" class="primary-button">Explorar projetos ↗</a>
+            <a href="#sobre" class="outline-button">Conhecer o estúdio</a>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="section" id="sobre">
+    <div class="container about-grid">
+        <div class="about-visual reveal"></div>
+
+        <div class="reveal">
+            <div class="section-label">SOBRE O VELETTI</div>
+
+            <h2 class="section-title">
+                Tecnologia com identidade e propósito.
+            </h2>
+
+            <p class="section-description">
+                O Veletti Studio nasceu com a proposta de criar experiências
+                digitais que unem criatividade, organização e tecnologia.
+                Cada projeto é desenvolvido para apresentar uma marca de
+                maneira única.
+            </p>
+
+            <div class="about-points">
+                <div class="about-point">
+                    <span>✦</span>
+                    <div><strong>Design personalizado</strong><br>Identidade visual pensada para cada projeto.</div>
+                </div>
+
+                <div class="about-point">
+                    <span>✦</span>
+                    <div><strong>Experiência responsiva</strong><br>Sites preparados para computadores e celulares.</div>
+                </div>
+
+                <div class="about-point">
+                    <span>✦</span>
+                    <div><strong>Desenvolvimento moderno</strong><br>Estrutura organizada e atenção aos detalhes.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="section" id="servicos">
+    <div class="container">
+        <div class="section-label">O QUE FAZEMOS</div>
+        <h2 class="section-title">Soluções para sua presença digital.</h2>
+        <p class="section-description">
+            Desenvolvemos páginas com foco em apresentação, identidade
+            visual e facilidade de navegação.
+        </p>
+
+        <div class="services-grid">
+            <article class="service-card reveal">
+                <div class="service-icon">🌐</div>
+                <h3>Sites institucionais</h3>
+                <p>Apresente sua empresa, seus serviços e seus diferenciais em um site profissional.</p>
+            </article>
+
+            <article class="service-card reveal">
+                <div class="service-icon">🛍️</div>
+                <h3>Vitrines digitais</h3>
+                <p>Apresente produtos, categorias, preços e informações de maneira organizada.</p>
+            </article>
+
+            <article class="service-card reveal">
+                <div class="service-icon">🎨</div>
+                <h3>Landing pages</h3>
+                <p>Páginas modernas para divulgar serviços, projetos, produtos e campanhas.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="section" id="projetos">
+    <div class="container">
+        <div class="section-label">PORTFÓLIO</div>
+        <h2 class="section-title">Projetos em destaque.</h2>
+        <p class="section-description">
+            Conheça algumas demonstrações de experiências digitais
+            desenvolvidas pelo Veletti Studio.
+        </p>
+
+        <div class="projects-grid">
+
+            <article class="project-card reveal">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900" alt="Interior de uma barbearia moderna" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <span>PROJETO 01 • BARBEARIA</span>
+                    <h3>The Garrison</h3>
+                    <p>Uma experiência elegante para uma barbearia moderna, com serviços e galeria.</p>
+                    <a href="#the-garrison" class="project-link">Ver demonstração ↗</a>
+                </div>
+            </article>
+
+            <article class="project-card reveal">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900" alt="Restaurante com pratos preparados" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <span>PROJETO 02 • RESTAURANTE</span>
+                    <h3>Urban Taste</h3>
+                    <p>Uma apresentação gastronômica com cardápio, fotografias e identidade própria.</p>
+                    <a href="#urban-taste" class="project-link">Ver demonstração ↗</a>
+                </div>
+            </article>
+
+            <article class="project-card reveal">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=900" alt="Equipamentos esportivos" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <span>PROJETO 03 • LOJA ESPORTIVA</span>
+                    <h3>Sport Zone</h3>
+                    <p>Uma vitrine esportiva com categorias, produtos e ofertas em destaque.</p>
+                    <a href="#sport-zone" class="project-link">Ver demonstração ↗</a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contato">
+    <div class="container">
+        <div class="contact-box reveal">
+            <div class="section-label">VAMOS CONVERSAR?</div>
+            <h2 class="section-title">Sua próxima ideia começa aqui.</h2>
+            <p>
+                Tem um projeto em mente? Entre em contato e vamos conversar
+                sobre como transformar sua ideia em uma experiência digital.
+            </p>
+
+            <a
+                href="https://wa.me/5531996525072?text=Ol%C3%A1%21%20Conheci%20a%20Veletti%20Studio%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                class="primary-button"
+                target="_blank"
+                rel="noopener noreferrer">
+                Conversar pelo WhatsApp ↗
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- THE GARRISON -->
+<section class="demo garrison" id="the-garrison">
+
+    <nav class="demo-nav">
+        <a href="#the-garrison" class="demo-logo">THE <span>GARRISON</span></a>
+
+        <div class="demo-nav-links">
+            <a href="#g-inicio">Início</a>
+            <a href="#g-servicos">Serviços</a>
+            <a href="#g-sobre">A barbearia</a>
+            <a href="#g-galeria">Galeria</a>
+        </div>
+    </nav>
+
+    <div class="demo-hero" id="g-inicio">
+        <div class="demo-hero-content">
+            <small>BARBEARIA • ESTILO • PERSONALIDADE</small>
+            <h2>Seu estilo merece o melhor.</h2>
+            <p>
+                Mais do que um corte, uma experiência. Um espaço criado
+                para quem valoriza personalidade, cuidado e estilo.
+            </p>
+            <a href="#g-servicos" class="demo-button">Conheça nossos serviços</a>
+        </div>
+    </div>
+
+    <section class="demo-section" id="g-servicos">
+        <div class="demo-heading">
+            <small>NOSSOS SERVIÇOS</small>
+            <h2>Cuidado em cada detalhe.</h2>
+        </div>
+
+        <div class="garrison-services">
+            <article class="g-service">
+                <div class="symbol">✂</div>
+                <h3>Corte masculino</h3>
+                <p>Cortes clássicos e modernos, com acabamento personalizado.</p>
+                <strong>R$ 40,00</strong>
+            </article>
+
+            <article class="g-service">
+                <div class="symbol">🪒</div>
+                <h3>Barba</h3>
+                <p>Modelagem e acabamento para valorizar seu estilo.</p>
+                <strong>R$ 30,00</strong>
+            </article>
+
+            <article class="g-service">
+                <div class="symbol">✦</div>
+                <h3>Corte + barba</h3>
+                <p>Uma experiência completa de cuidado e visual.</p>
+                <strong>R$ 60,00</strong>
+            </article>
+        </div>
+    </section>
+
+    <section class="demo-section garrison-about" id="g-sobre">
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1000" alt="Barbeiro trabalhando em um corte" loading="lazy">
+
+        <div>
+            <div class="demo-heading" style="text-align:left; margin-bottom:15px;">
+                <small>NOSSA ESSÊNCIA</small>
+                <h2>Tradição e modernidade.</h2>
+            </div>
+
+            <p>
+                A The Garrison representa uma barbearia que valoriza
+                a qualidade, a atenção e o atendimento personalizado.
+                Cada detalhe do ambiente foi pensado para proporcionar
+                uma experiência agradável.
+            </p>
+
+            <p>
+                Nosso objetivo é que cada cliente encontre seu estilo
+                e saia com a confiança renovada.
+            </p>
+
+            <a href="#g-galeria" class="demo-button">Conheça o espaço</a>
+        </div>
+    </section>
+
+    <section class="demo-section" id="g-galeria">
+        <div class="demo-heading">
+            <small>AMBIENTE</small>
+            <h2>Um espaço feito para você.</h2>
+        </div>
+
+        <div class="garrison-gallery">
+            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800" alt="Ambiente de barbearia" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800" alt="Detalhes de uma barbearia" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=800" alt="Cadeira de barbearia" loading="lazy">
+        </div>
+    </section>
+
+    <footer class="garrison-footer">
+        <div class="demo-logo">THE <span>GARRISON</span></div>
+        <p style="margin-top:12px;">Estilo, cuidado e personalidade.</p>
+        <p style="margin-top:15px; font-size:12px;">Demonstração de projeto • Veletti Studio</p>
+    </footer>
+
+</section>
+
+<!-- URBAN TASTE -->
+<section class="demo urban" id="urban-taste">
+
+    <nav class="demo-nav">
+        <a href="#urban-taste" class="demo-logo">urban <span>taste.</span></a>
+
+        <div class="demo-nav-links">
+            <a href="#u-inicio">Início</a>
+            <a href="#u-cardapio">Cardápio</a>
+            <a href="#u-sobre">Sobre</a>
+            <a href="#u-contato">Contato</a>
+        </div>
+    </nav>
+
+    <div class="demo-hero" id="u-inicio">
+        <div class="demo-hero-content">
+            <small>GASTRONOMIA • SABOR • EXPERIÊNCIA</small>
+            <h2>Uma experiência para todos os sentidos.</h2>
+            <p>
+                Ingredientes selecionados, combinações especiais e
+                pratos preparados para transformar cada refeição
+                em um momento inesquecível.
+            </p>
+            <a href="#u-cardapio" class="demo-button">Explorar cardápio</a>
+        </div>
+    </div>
+
+    <section class="demo-section" id="u-cardapio">
+        <div class="demo-heading">
+            <small>NOSSO CARDÁPIO</small>
+            <h2>Sabores que surpreendem.</h2>
+        </div>
+
+        <div class="menu-grid">
+
+            <article class="food-card">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800" alt="Hambúrguer artesanal" loading="lazy">
+                <div class="food-info">
+                    <h3>Urban Burger</h3>
+                    <p>Hambúrguer artesanal, queijo, salada fresca e molho especial.</p>
+                    <span class="food-price">R$ 32,90</span>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=800" alt="Massa preparada com molho" loading="lazy">
+                <div class="food-info">
+                    <h3>Pasta Especial</h3>
+                    <p>Massa selecionada com molho cremoso e ervas frescas.</p>
+                    <span class="food-price">R$ 39,90</span>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800" alt="Salada fresca" loading="lazy">
+                <div class="food-info">
+                    <h3>Fresh Garden</h3>
+                    <p>Mix de folhas, vegetais frescos e molho da casa.</p>
+                    <span class="food-price">R$ 27,90</span>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800" alt="Pizza artesanal" loading="lazy">
+                <div class="food-info">
+                    <h3>Pizza da Casa</h3>
+                    <p>Massa especial, molho artesanal e ingredientes selecionados.</p>
+                    <span class="food-price">R$ 45,90</span>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800" alt="Prato colorido com ingredientes frescos" loading="lazy">
+                <div class="food-info">
+                    <h3>Green Bowl</h3>
+                    <p>Uma combinação equilibrada de ingredientes frescos.</p>
+                    <span class="food-price">R$ 29,90</span>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800" alt="Sobremesa com sorvete" loading="lazy">
+                <div class="food-info">
+                    <h3>Sweet Moment</h3>
+                    <p>Sobremesa especial para finalizar sua experiência.</p>
+                    <span class="food-price">R$ 19,90</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="demo-section urban-about" id="u-sobre">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1000" alt="Interior de restaurante" loading="lazy">
+
+        <div>
+            <div class="demo-heading" style="text-align:left; margin-bottom:15px;">
+                <small>QUEM SOMOS</small>
+                <h2>Comida boa aproxima pessoas.</h2>
+            </div>
+
+            <p>
+                A Urban Taste nasceu da ideia de unir gastronomia,
+                criatividade e bons momentos. Nosso espaço valoriza
+                ingredientes, apresentação e experiências.
+            </p>
+
+            <p>
+                Cada prato é uma oportunidade de descobrir novos
+                sabores e aproveitar o melhor da gastronomia.
+            </p>
+
+            <a href="#u-contato" class="demo-button">Conheça nosso espaço</a>
+        </div>
+    </section>
+
+    <section class="demo-section" id="u-contato">
+        <div class="demo-heading">
+            <small>VENHA NOS CONHECER</small>
+            <h2>Seu próximo momento especial.</h2>
+            <p style="color:#77796e; margin-top:15px;">
+                Endereço, horários e canais de atendimento podem ser
+                personalizados para o restaurante.
+            </p>
+            <a href="#contato" class="demo-button" style="margin-top:25px;">Fale com a equipe</a>
+        </div>
+    </section>
+
+    <footer class="urban-footer">
+        <div class="demo-logo">urban <span style="color:#df9251;">taste.</span></div>
+        <p style="margin-top:12px;">Sabor que conecta pessoas.</p>
+        <p style="margin-top:15px; font-size:12px;">Demonstração de projeto • Veletti Studio</p>
+    </footer>
+
+</section>
+
+<!-- SPORT ZONE -->
+<section class="demo sport" id="sport-zone">
+
+    <nav class="demo-nav">
+        <a href="#sport-zone" class="demo-logo">SPORT <span>ZONE</span></a>
+
+        <div class="demo-nav-links">
+            <a href="#s-inicio">Início</a>
+            <a href="#s-categorias">Categorias</a>
+            <a href="#s-produtos">Produtos</a>
+            <a href="#s-ofertas">Ofertas</a>
+        </div>
+    </nav>
+
+    <div class="demo-hero" id="s-inicio">
+        <div class="demo-hero-content">
+            <small>SEU ESPORTE. SUA ENERGIA.</small>
+            <h2>Supere seus limites.</h2>
+            <p>
+                Encontre produtos esportivos para acompanhar seu ritmo.
+                Equipamentos, acessórios e estilo para quem vive o esporte.
+            </p>
+            <a href="#s-produtos" class="demo-button">Explorar produtos</a>
+        </div>
+    </div>
+
+    <section class="demo-section" id="s-categorias">
+        <div class="demo-heading">
+            <small>EXPLORE</small>
+            <h2>Encontre sua modalidade.</h2>
+        </div>
+
+        <div class="category-grid">
+            <a href="#s-produtos" class="category-card">
+                <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800" alt="Futebol" loading="lazy">
+                <h3>Futebol</h3>
+            </a>
+
+            <a href="#s-produtos" class="category-card">
+                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800" alt="Basquete" loading="lazy">
+                <h3>Basquete</h3>
+            </a>
+
+            <a href="#s-produtos" class="category-card">
+                <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800" alt="Natação" loading="lazy">
+                <h3>Natação</h3>
+            </a>
+        </div>
+    </section>
+
+    <section class="demo-section" id="s-produtos">
+        <div class="demo-heading">
+            <small>VITRINE DE PRODUTOS</small>
+            <h2>Escolha seu próximo equipamento.</h2>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1614632537423-1e6c2e7e0b5a?w=800" alt="Chuteira esportiva" loading="lazy">
+                <div class="product-info">
+                    <small>FUTEBOL</small>
+                    <h3>Chuteira Performance</h3>
+                    <p>Conforto e estabilidade para acompanhar suas partidas.</p>
+                    <span class="product-price">R$ 249,90</span>
+                    <a href="#contato">Consultar produto</a>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800" alt="Tênis esportivo" loading="lazy">
+                <div class="product-info">
+                    <small>RUNNING</small>
+                    <h3>Tênis Velocity</h3>
+                    <p>Design esportivo para seus treinos e atividades.</p>
+                    <span class="product-price">R$ 329,90</span>
+                    <a href="#contato">Consultar produto</a>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=800" alt="Equipamento de academia" loading="lazy">
+                <div class="product-info">
+                    <small>FITNESS</small>
+                    <h3>Kit Fitness</h3>
+                    <p>Acessórios para complementar sua rotina de exercícios.</p>
+                    <span class="product-price">R$ 119,90</span>
+                    <a href="#contato">Consultar produto</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="sport-banner" id="s-ofertas">
+        <h2>SEU PRÓXIMO DESAFIO COMEÇA AQUI.</h2>
+        <p>
+            Descubra novos equipamentos, encontre seu estilo
+            e leve sua paixão pelo esporte ainda mais longe.
+        </p>
+        <a href="#contato" class="demo-button" style="margin-top:23px;">Fale com a loja</a>
+    </section>
+
+    <footer class="sport-footer">
+        <div class="demo-logo">SPORT <span style="color:#c5f36b;">ZONE</span></div>
+        <p style="margin-top:12px;">Movimento, energia e desempenho.</p>
+        <p style="margin-top:15px; font-size:12px;">Demonstração de projeto • Veletti Studio</p>
+    </footer>
+
+</section>
+
+</main>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div>© <span id="currentYear"></span> Veletti Studio. Todos os direitos reservados.</div>
+        <div>Design e desenvolvimento digital.</div>
+    </div>
+</footer>
+
+<!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+<a
+    href="https://wa.me/5531996525072?text=Ol%C3%A1%21%20Conheci%20a%20Veletti%20Studio%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Conversar com a Veletti Studio pelo WhatsApp"
+    title="Fale conosco pelo WhatsApp">
+
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 .8A15.1 15.1 0 0 0 3.1 23.8L1 31l7.4-1.9A15.2 15.2 0 1 0 16 .8zm0 27.5c-2.4 0-4.7-.7-6.7-2l-.5-.3-4.4 1.2 1.2-4.3-.3-.5a12.4 12.4 0 1 1 10.7 5.9zm6.8-9.3c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.5-.3.4-1.2 1.2-1.2 3s1.3 3.4 1.5 3.6c.2.2 2.5 3.8 6.1 5.3.9.4 1.6.6 2.1.7.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.3-.3-.7-.5z"/>
+    </svg>
+</a>
+
+<script>
+/* MENU PARA CELULAR */
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("navLinks");
+
+menuButton.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+
+    menuButton.setAttribute("aria-expanded", isOpen);
+    menuButton.textContent = isOpen ? "✕" : "☰";
+});
+
+/* FECHAR MENU AO CLICAR EM UM LINK */
+document.querySelectorAll("#navLinks a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.textContent = "☰";
+        menuButton.setAttribute("aria-expanded", "false");
+    });
+});
+
+/* ANIMAÇÕES AO ROLAR A PÁGINA */
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+    revealObserver.observe(element);
+});
+
+/* ANO AUTOMÁTICO NO RODAPÉ */
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
