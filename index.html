@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Veletti Studio - criação de sites modernos, profissionais e personalizados.">
+<title>Veletti Studio | Experiências Digitais</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #050b18;
+    --bg-card: #0c172b;
+    --blue: #1677ff;
+    --cyan: #00d9ff;
+    --white: #f4f8ff;
+    --muted: #9aabc5;
+    --border: rgba(71, 151, 255, .2);
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.container {
+    width: min(1160px, 90%);
+    margin: auto;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section-label {
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(28px, 4vw, 43px);
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+.section-description {
+    color: var(--muted);
+    max-width: 620px;
+    line-height: 1.8;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #1680ff, #00e5ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 24px;
+    background: linear-gradient(110deg, #1268ef, #00bfe8);
+    color: white;
+    border-radius: 8px;
+    font-weight: 800;
+    border: none;
+    transition: .3s;
+}
+
+.primary-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 35px rgba(0, 175, 255, .3);
+}
+
+.outline-button {
+    display: inline-flex;
+    padding: 13px 23px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: white;
+    transition: .3s;
+}
+
+.outline-button:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+.section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #1677ff, transparent);
+    opacity: .4;
+}
+
+/* CABEÇALHO */
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(5, 11, 24, .88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Orbitron", sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #c0cee3;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: 0;
+    color: white;
+    font-size: 28px;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 45%, rgba(0, 132, 255, .2), transparent 32%),
+        radial-gradient(circle at 15% 80%, rgba(0, 217, 255, .09), transparent 30%);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border: 1px solid rgba(0, 217, 255, .13);
+    border-radius: 50%;
+    right: 8%;
+    top: 15%;
+    box-shadow: 0 0 80px rgba(0, 128, 255, .13);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+}
+
+.hero-tag {
+    display: inline-block;
+    padding: 9px 15px;
+    border: 1px solid rgba(0, 217, 255, .35);
+    background: rgba(0, 217, 255, .07);
+    border-radius: 30px;
+    color: var(--cyan);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(38px, 6vw, 70px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    color: #b1c2db;
+    max-width: 580px;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.hero-orbit {
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border: 1px solid rgba(0, 217, 255, .25);
+    border-radius: 50%;
+    right: 13%;
+    top: 25%;
+    animation: orbit 18s linear infinite;
+}
+
+.hero-orbit::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: var(--cyan);
+    border-radius: 50%;
+    top: 20px;
+    left: 60px;
+    box-shadow: 0 0 25px var(--cyan);
+}
+
+@keyframes orbit {
+    to { transform: rotate(360deg); }
+}
+
+/* SOBRE */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-visual {
+    min-height: 380px;
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, rgba(0, 105, 255, .25), rgba(0, 217, 255, .05)),
+        url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1000") center/cover;
+}
+
+.about-visual::after {
+    content: "IDEIAS • DESIGN • TECNOLOGIA";
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 0 2px 12px #000;
+}
+
+.about-points {
+    display: grid;
+    gap: 17px;
+    margin-top: 28px;
+}
+
+.about-point {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    color: #c3d2e8;
+    line-height: 1.6;
+}
+
+.about-point strong {
+    color: white;
+}
+
+/* SERVIÇOS */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 45px;
+}
+
+.service-card {
+    padding: 30px;
+    border: 1px solid var(--border);
+    background: linear-gradient(145deg, #0d1c34, #081222);
+    border-radius: 14px;
+    transition: .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--cyan);
+    box-shadow: 0 15px 40px rgba(0, 100, 255, .12);
+}
+
+.service-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* PROJETOS */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 45px;
+}
+
+.project-card {
+    overflow: hidden;
+    border-radius: 15px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--cyan);
+}
+
+.project-image {
+    height: 205px;
+    overflow: hidden;
+}
+
+.project-image img {
+    height: 100%;
+    transition: .5s;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.06);
+}
+
+.project-info {
+    padding: 23px;
+}
+
+.project-info span {
+    color: var(--cyan);
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.project-info h3 {
+    margin: 10px 0;
+    font-size: 21px;
+}
+
+.project-info p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.project-link {
+    color: var(--cyan);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* CONTATO */
+.contact-box {
+    padding: 55px;
+    text-align: center;
+    border: 1px solid rgba(0, 217, 255, .3);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at top, rgba(0, 120, 255, .18), transparent 60%),
+        #091529;
+}
+
+.contact-box p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin: 15px auto 25px;
+    max-width: 550px;
+}
+
+/* BOTÃO FLUTUANTE WHATSAPP */
+.whatsapp-float {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 2000;
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 5px 25px rgba(37, 211, 102, .35);
+    transition: .3s;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px) scale(1.06);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, .5);
+}
+
+.whatsapp-float svg {
+    width: 34px;
+    height: 34px;
+    fill: currentColor;
+}
+
+/* RODAPÉ */
+.main-footer {
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* THE GARRISON */
+.demo {
+    scroll-margin-top: 80px;
+}
+
+.garrison {
+    --g-black: #101010;
+    --g-card: #1b1b1b;
+    --g-accent: #c7a77a;
+    background: #101010;
+    color: #f7f3ed;
+    font-family: "DM Sans", sans-serif;
+}
+
+.garrison .demo-nav {
+    padding: 23px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    gap: 20px;
+}
+
+.garrison .demo-logo {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    letter-spacing: 2px;
+}
+
+.garrison .demo-logo span {
+    color: var(--g-accent);
+}
+
+.garrison .demo-nav-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #d0c7bc;
+}
+
+.garrison .demo-nav-links a:hover {
+    color: var(--g-accent);
+}
+
+.garrison .demo-hero {
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.15)),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1800") center/cover;
+}
+
+.garrison .demo-hero-content {
+    max-width: 590px;
+}
+
+.garrison .demo-hero small {
+    color: var(--g-accent);
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.garrison .demo-hero h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.08;
+    margin: 22px 0;
+}
+
+.garrison .demo-hero p {
+    color: #ddd;
+    line-height: 1.8;
+    max-width: 480px;
+    margin-bottom: 30px;
+}
+
+.garrison .demo-button {
+    display: inline-block;
+    padding: 14px 24px;
+    background: var(--g-accent);
+    color: #17130e;
+    font-weight: 800;
+    transition: .3s;
+}
+
+.garrison .demo-button:hover {
+    background: #ead0a6;
+    transform: translateY(-3px);
+}
+
+.garrison .demo-section {
+    padding: 85px 7%;
+}
+
+.garrison .demo-heading {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.garrison .demo-heading small {
+    color: var(--g-accent);
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.garrison .demo-heading h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 4vw, 43px);
+    margin-top: 12px;
+}
+
+.garrison .garrison-services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.garrison .g-service {
+    padding: 30px;
+    background: var(--g-card);
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.garrison .g-service .symbol {
+    font-size: 35px;
+    margin-bottom: 18px;
+}
+
+.garrison .g-service h3 {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.garrison .g-service p {
+    color: #bdb7af;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.garrison .g-service strong {
+    display: block;
+    margin-top: 20px;
+    color: var(--g-accent);
+    font-size: 19px;
+}
+
+.garrison .garrison-gallery {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 15px;
+}
+
+.garrison .garrison-gallery img {
+    height: 270px;
+}
+
+.garrison .garrison-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    background: #181818;
+}
+
+.garrison .garrison-about img {
+    height: 370px;
+}
+
+.garrison .garrison-about p {
+    color: #c2bcb3;
+    line-height: 1.9;
+    margin: 18px 0;
+}
+
+.garrison .garrison-footer {
+    background: #080808;
+    text-align: center;
+    padding: 35px 15px;
+    color: #a9a198;
+}
+
+/* URBAN TASTE */
+.urban {
+    --u-dark: #20231d;
+    --u-green: #3f6548;
+    --u-orange: #df9251;
+    background: #faf7f0;
+    color: #24271f;
+    font-family: "DM Sans", sans-serif;
+}
+
+.urban .demo-nav {
+    min-height: 78px;
+    padding: 15px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+}
+
+.urban .demo-logo {
+    font-family: Georgia, serif;
+    font-size: 29px;
+    font-weight: 800;
+}
+
+.urban .demo-logo span {
+    color: var(--u-green);
+}
+
+.urban .demo-nav-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.urban .demo-nav-links a:hover {
+    color: var(--u-green);
+}
+
+.urban .demo-hero {
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background:
+        linear-gradient(90deg, rgba(20,25,18,.85), rgba(20,25,18,.1)),
+        url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1800") center/cover;
+    color: white;
+}
+
+.urban .demo-hero-content {
+    max-width: 600px;
+}
+
+.urban .demo-hero small {
+    color: #f2bd83;
+    letter-spacing: 4px;
+    font-weight: 800;
+}
+
+.urban .demo-hero h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(43px, 6vw, 75px);
+    line-height: 1.1;
+    margin: 22px 0;
+}
+
+.urban .demo-hero p {
+    color: #eee9e0;
+    max-width: 470px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.urban .demo-button {
+    display: inline-block;
+    padding: 14px 25px;
+    background: var(--u-orange);
+    color: #241d16;
+    font-weight: 800;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.urban .demo-button:hover {
+    background: #f5b87e;
+    transform: translateY(-3px);
+}
+
+.urban .demo-section {
+    padding: 85px 7%;
+}
+
+.urban .demo-heading {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.urban .demo-heading small {
+    color: var(--u-green);
+    letter-spacing: 3px;
+    font-weight: 800;
+}
+
+.urban .demo-heading h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 4vw, 43px);
+    margin-top: 12px;
+}
+
+.urban .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+}
+
+.urban .food-card {
+    background: white;
+    box-shadow: 0 7px 25px rgba(40, 35, 20, .08);
+    overflow: hidden;
+    border-radius: 9px;
+}
+
+.urban .food-card img {
+    height: 220px;
+    transition: .4s;
+}
+
+.urban .food-card:hover img {
+    transform: scale(1.05);
+}
+
+.urban .food-info {
+    padding: 22px;
+}
+
+.urban .food-info h3 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    margin-bottom: 9px;
+}
+
+.urban .food-info p {
+    color: #77796e;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.urban .food-price {
+    display: block;
+    color: var(--u-green);
+    font-size: 19px;
+    font-weight: 800;
+    margin-top: 16px;
+}
+
+.urban .urban-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+    background: #eeeadf;
+}
+
+.urban .urban-about img {
+    height: 370px;
+}
+
+.urban .urban-about p {
+    line-height: 1.9;
+    color: #66685e;
+    margin: 18px 0;
+}
+
+.urban .urban-footer {
+    background: var(--u-dark);
+    color: #e7e2d7;
+    padding: 38px 15px;
+    text-align: center;
+}
+
+/* SPORT ZONE */
+.sport {
+    --s-dark: #101c27;
+    --s-blue: #1765e9;
+    --s-lime: #c5f36b;
+    background: #f4f6f8;
+    color: #17212d;
+    font-family: "DM Sans", sans-serif;
+}
+
+.sport .demo-nav {
+    min-height: 78px;
+    padding: 15px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: white;
+}
+
+.sport .demo-logo {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    font-size: 23px;
+}
+
+.sport .demo-logo span {
+    color: var(--s-blue);
+}
+
+.sport .demo-nav-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.sport .demo-nav-links a:hover {
+    color: var(--s-blue);
+}
+
+.sport .demo-hero {
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background:
+        linear-gradient(90deg, rgba(9,22,36,.9), rgba(9,22,36,.15)),
+        url("https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1800") center/cover;
+    color: white;
+}
+
+.sport .demo-hero-content {
+    max-width: 610px;
+}
+
+.sport .demo-hero small {
+    color: var(--s-lime);
+    letter-spacing: 4px;
+    font-weight: 800;
+}
+
+.sport .demo-hero h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(39px, 6vw, 68px);
+    line-height: 1.15;
+    margin: 22px 0;
+}
+
+.sport .demo-hero p {
+    color: #d5dfe9;
+    max-width: 480px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.sport .demo-button {
+    display: inline-block;
+    background: var(--s-lime);
+    color: #17212d;
+    padding: 14px 25px;
+    border-radius: 5px;
+    font-weight: 900;
+    transition: .3s;
+}
+
+.sport .demo-button:hover {
+    transform: translateY(-3px);
+    background: #d8ff8a;
+}
+
+.sport .demo-section {
+    padding: 85px 7%;
+}
+
+.sport .demo-heading {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.sport .demo-heading small {
+    color: var(--s-blue);
+    letter-spacing: 3px;
+    font-weight: 800;
+}
+
+.sport .demo-heading h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(27px, 4vw, 38px);
+    margin-top: 12px;
+}
+
+.sport .category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.sport .category-card {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 9px;
+    color: white;
+}
+
+.sport .category-card img {
+    height: 100%;
+    transition: .5s;
+}
+
+.sport .category-card:hover img {
+    transform: scale(1.08);
+}
+
+.sport .category-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,.8));
+}
+
+.sport .category-card h3 {
+    position: absolute;
